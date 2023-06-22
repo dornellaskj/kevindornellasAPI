@@ -17,8 +17,14 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger(option =>
+    {
+        option.RouteTemplate = "default/{documentName}/swagger.json";
+    });
+    app.UseSwaggerUI(option =>
+    {
+        option.RoutePrefix = "default";
+    });
 }
 
 //app.UseHttpsRedirection();
