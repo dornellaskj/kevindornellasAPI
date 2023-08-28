@@ -6,28 +6,20 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.WebHost.UseKestrel(opts =>
-{
-    opts.ListenAnyIP(8080);
-    opts.ListenAnyIP(8081);
-});
+
+// Add AWS Lambda support.
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(option =>
-    {
-        option.RouteTemplate = "default/{documentName}/swagger.json";
-    });
-    app.UseSwaggerUI(option =>
-    {
-        option.RoutePrefix = "default";
-    });
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
