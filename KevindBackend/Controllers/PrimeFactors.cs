@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace KevinDornellasAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class PrimeFactors : ControllerBase
     {
@@ -12,11 +11,11 @@ namespace KevinDornellasAPI.Controllers
         {
             return FindMaxPrime(number);
         }
-
+        
         private Int64 FindMaxPrime(Int64 number)
         {
             Int64 limit = (long)Math.Ceiling(Math.Sqrt(number));
-            for(Int64 i = 2; i <= limit; i++)
+            for (Int64 i = 2; i <= limit; i++)
             {
                 if(number % i == 0)
                 {

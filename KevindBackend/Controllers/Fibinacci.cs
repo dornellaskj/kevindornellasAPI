@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KevinDornellasAPI.Controllers
 {
-    [Route("default/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class Fibinacci : ControllerBase
     {
