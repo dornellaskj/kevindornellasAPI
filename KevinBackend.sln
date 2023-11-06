@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibinacci", "Fibinacci\Fibi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibinacci.Tests", "Fibinacci.Tests\Fibinacci.Tests.csproj", "{355EE8C5-9C9B-4519-9F62-6684D486CA4D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "insertQuestions", "insertQuestions\insertQuestions.csproj", "{E51040DC-9C71-4D8B-A918-8EC15899E4B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsertQuestions", "insertQuestions\InsertQuestions.csproj", "{E51040DC-9C71-4D8B-A918-8EC15899E4B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

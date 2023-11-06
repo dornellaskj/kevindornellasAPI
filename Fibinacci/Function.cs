@@ -32,16 +32,14 @@ public class Function
         message.sum =  fibList.Sum();
         message.maxNum = maxNum;
         message.fibList = fibList;
-        fibList = new List<int>();
-        num1 = 1;
-        num2 = 2;
+        resetClass();
         return new APIGatewayHttpApiV2ProxyResponse
         {
             Body = JsonConvert.SerializeObject(message),
             StatusCode = 200
         };
         
-    }
+    }       
 
     private void getNum1()
     {
@@ -76,5 +74,12 @@ public class Function
     private Boolean isEven(int num)
     {
         return num % 2 == 0;
+    }
+
+    private void resetClass()
+    {
+        fibList = new List<int>();
+        num1 = 1;
+        num2 = 2;
     }
 }
